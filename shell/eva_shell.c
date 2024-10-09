@@ -13,21 +13,52 @@ void eva_loop();
 int eva_cd(char **args);
 int eva_help(char **args);
 int eva_exit(char **args);
+int jojo(char **args);
 
 char *builtin_str[] = {
     "cd",
     "help",
+    "jojo",
     "exit"
 };
 
 int (*builtin_func[]) (char**) = {
     &eva_cd,
     &eva_help,
+    &jojo,
     &eva_exit
 };
 
 int eva_num_builtin() {
     return sizeof(builtin_str) / sizeof(char *);
+}
+
+int jojo(char **args){
+
+    if(args == NULL){
+        fprintf(stderr,"EVA: no argument");
+        return -1;
+    }
+
+    FILE *file_ptr;
+
+    char ch;
+
+    file_ptr = fopen("stand.txt", "r");
+
+    if (NULL == file_ptr) {
+        printf("file can't be opened \n");
+        return EXIT_FAILURE;
+    }
+
+    printf("Content of the file are:-: \n");
+
+    while ((ch = fgetc(file_ptr)) != EOF) {
+        printf("%c", ch);
+    }
+
+    fclose(file_ptr);
+    return 1;
 }
 
 int eva_cd(char **args) {
