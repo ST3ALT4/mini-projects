@@ -139,9 +139,15 @@ void eva_loop() {
     char *line;
     char **args;
     int status;
+    char cwd[EVA_RL_BUFSIZE];
 
     do {
         printf("$ ");
+        if(getcwd(cwd,sizeof(cwd))!=NULL){
+            printf("%s> ",cwd);
+        }else{
+            fprintf(stderr,"EVA: current directory");
+        }
         line = eva_read_line();
         args = eva_split_line(line);
         status = eva_execute(args);
