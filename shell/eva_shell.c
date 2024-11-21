@@ -18,14 +18,14 @@ int jojo(char **args);
 char *builtin_str[] = {
     "cd",
     "help",
-    "jojo",
+    "video",
     "exit"
 };
 
 int (*builtin_func[]) (char**) = {
     &eva_cd,
     &eva_help,
-    &jojo,
+    &video,
     &eva_exit
 };
 
@@ -33,7 +33,7 @@ int eva_num_builtin() {
     return sizeof(builtin_str) / sizeof(char *);
 }
 
-int jojo(char **args){
+int video(char **args){
 
     if(args == NULL){
         fprintf(stderr,"EVA: no argument");
