@@ -1,0 +1,23 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block body %}
+<div class="entry">
+    {% if entry != None %}
+    {{ entry|safe }}
+    {% else %}
+    Error
+    {% endif %}
+</div>
+{% endblock %}
+
+{% block nav %}
+<div style="bottom: 10px; position: absolute;">
+    <a href="{% url 'wiki:edit' title %}" class="btn btn-outline-primary">
+        Edit
+    </a>
+</div>
+{% endblock %}

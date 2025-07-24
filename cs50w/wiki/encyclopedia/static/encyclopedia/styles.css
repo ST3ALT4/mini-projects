@@ -1,0 +1,118 @@
+html, body {
+    overflow: hidden; /* REMOVE this line if you want the main content to scroll */
+}
+
+/* Container for sidebar + main */
+.wrapper {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Sidebar Fixed Width */
+.sidebar {
+    width: 250px;
+    background-color: #000;
+    padding: 1.25rem;
+    overflow-y: auto;
+}
+
+.sidebar h2 {
+    color: wheat;
+    margin-top: 5px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.sidebar li {
+    color: antiquewhite;
+    margin-bottom: 0.5rem;
+}
+
+.sidebar a {
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+.sidebar a:hover {
+    text-decoration: underline;
+}
+
+/* Main Content Flexed */
+.main {
+    flex: 1;
+    background-color: #292929;
+    padding: 1rem;
+    overflow-y: auto;
+}
+
+/* Headings */
+h1 {
+    color: wheat;
+    margin-top: 0;
+    padding-top: 20px;
+}
+
+/* Code Block */
+code {
+    white-space: pre;
+}
+
+/* Form Fields */
+textarea.form-control,
+input.form-control {
+    background-color: #212121;
+    color: white;
+    border: 1px solid #444;
+}
+
+textarea.form-control::placeholder,
+input.form-control::placeholder {
+    color: #aaa;
+}
+
+textarea.form-control {
+    height: 90vh;
+    width: 100%;
+    resize: vertical;
+}
+
+/* Optional: Label styling */
+label {
+    color: #ddd;
+}
+
+/* Entry Display */
+.entry {
+    color: aliceblue;
+}
+
+/* Search Field */
+.search {
+    width: 100%;
+    font-size: 15px;
+    line-height: 15px;
+    background-color: #fff;
+}
+
+/* Form Color Scheme */
+.form-control {
+    color-scheme: dark;
+}
+
+/* Optional Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #777;
+}
